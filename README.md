@@ -19,7 +19,6 @@ The portfolio highlights:
 - Interactive portfolio filtering
 - Animated typing effect on the hero section
 - Integration of Google Maps for location
-- Contact form (removed as per user request)
 - Multiple project categories with images and descriptions
 
 ## Technologies Used
@@ -31,16 +30,15 @@ The portfolio highlights:
 - Google Fonts
 - Google Maps Embed
 
-## Screenshots
 
-### Home Page Hero Section
-![Home Hero](assets/img/main profile.jpg)
+### Home Page Screenshots Section
+![Home Hero](assets/Sample%20Screenshots%20of%20Portfolio/Screenshot%202025-09-20%20014322.png)
 
 ### Projects Section
-![Projects](assets/img/project/traffic/image.png)
+![Projects](assets/Sample%20Screenshots%20of%20Portfolio/Screenshot%202025-09-20%20014355.png)
 
-### Website Traffic Forecasting Project
-![Traffic Forecast](assets/img/project/traffic/forcast.png)
+### Brain Tumor Detection Project
+![Traffic Forecast](assets/Sample%20Screenshots%20of%20Portfolio/Screenshot%202025-09-20%20020106.png)
 
 ## How to Use
 
@@ -55,6 +53,16 @@ The portfolio highlights:
 
 This project is open source and available under the MIT License.
 
-## Contact
 
-For inquiries, please reach out via LinkedIn or GitHub profiles linked in the portfolio.
+## License & Copyright
+
+Copyright © Jaikishan Nishad, 2025.
+
+This project and its contents were created by Jaikishan Nishad. All rights reserved.
+
+You may use, share, or modify this project for educational and research purposes, provided proper attribution is given. For commercial use or other inquiries, please contact the author directly.
+
+Author: Jaikishan Nishad     
+GitHub: JaikishanNishad   
+Contact: jaikishannishad33@gmail.com  
+Date: 20 September 2025
