@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brain Tumor Detection — Project Details</title>
+
+  <!-- Site CSS & Vendor CSS (same as main site) -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="/assets/css/main.css" rel="stylesheet" />
+  <style>
+    /* Small tweaks for the details page */
+    .project-hero { margin-top: 20px; }
+    .project-hero img { width:100%; height:auto; border-radius: .5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .metrics-table td, .metrics-table th { vertical-align: middle; }
+    .gallery img { border-radius: .4rem; width:100%; height:auto; display:block; }
+    .btn-github { background: #24292f; color: #fff; border: none; }
+    @media (max-width: 576px){ .project-hero { margin-top: 10px } }
+  </style>
+</head>
+<body class="projects-page">
+
+  <!-- Header (keeps the same look as your main site) -->
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="../assets/img/jay.png" alt="" class="img-fluid rounded-circle" />
+    </div>
+    <a href="/index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Jaikishan</h1>
+    </a>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/index.html"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="/projects.html" class="active"><i class="bi bi-images navicon"></i> Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section light-background container" data-aos="fade-up">
+      <div class="row project-hero">
+        <div class="col-lg-7">
+          <!-- Primary project image (use your local asset) -->
+          <img src="/assets/img/portfolio/BrainTumor.jpg" alt="Brain Tumor Detection" class="img-fluid" />
+        </div>
+
+        <div class="col-lg-5">
+          <h2>Brain Tumor Detection — YOLOv9</h2>
+          <p class="lead">Custom-trained YOLOv9 object detection model to detect & localize brain tumors in medical MRI/scan images. Workflow includes dataset preparation in YOLO format, training, evaluation visualizations and an inference notebook.</p>
+
+          <div class="mt-4">
+            <a class="btn btn-github mb-2" href="https://github.com/Jaikishan1228/Brain-Tumor-Detection" target="_blank" rel="noopener">
+              <i class="bi bi-github"></i> View on GitHub
+            </a>
+            <a class="btn btn-outline-primary mb-2" href="../projects.html" style="margin-left:8px;">
+              <i class="bi bi-arrow-left"></i> Back to Projects
+            </a>
+          </div>
+
+          <hr/>
+
+          <h5>Quick Facts</h5>
+          <ul>
+            <li><strong>Primary framework:</strong> ultralytics YOLOv9 (custom training)</li>
+            <li><strong>Notebook:</strong> <code>YOLOv9_BrainTumor_Detection.ipynb</code></li>
+            <li><strong>Trained weights:</strong> <code>models/yolov9_brain_tumor.pt</code> (in repo)</li>
+            <li><strong>Date:</strong> 16 Sep 2025</li>
+            <li><strong>Author:</strong> Jaikishan Nishad</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Model Performance -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <h3>Model Performance (exp1 — final)</h3>
+          <p>Final validation metrics after training (epoch 50).</p>
+
+          <div class="table-responsive">
+            <table class="table table-bordered metrics-table">
+              <thead class="table-light">
+                <tr>
+                  <th>Metric</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Precision</td><td>0.8878</td></tr>
+                <tr><td>Recall</td><td>0.8597</td></tr>
+                <tr><td>mAP @ 0.5</td><td>0.9127</td></tr>
+                <tr><td>mAP @ 0.5:0.95</td><td>0.6924</td></tr>
+                <tr><td>Box Loss</td><td>0.9912</td></tr>
+                <tr><td>Class Loss</td><td>0.7001</td></tr>
+                <tr><td>DFL Loss</td><td>1.4412</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="small text-muted">Full training logs, plots and results are available in the repository under <code>yolov9_brain_tumor/exp1/</code> (precision/recall curves, confusion matrices, and sample predictions).</p>
+        </div>
+      </div>
+
+      <!-- How to use -->
+      <div class="row mt-4">
+        <div class="col-lg-8">
+          <h3>How to Run (quick)</h3>
+          <ol>
+            <li>Prepare dataset in YOLO format (images + .txt labels). See notebook for expected folder structure.</li>
+            <li>Install requirements: <code>Python 3.8+</code>, <code>ultralytics</code>, <code>opencv-python</code>, <code>matplotlib</code>.</li>
+            <li>Open and run <code>YOLOv9_BrainTumor_Detection.ipynb</code> — it contains dataset prep, training and inference cells.</li>
+            <li>Trained weights are saved to <code>models/yolov9_brain_tumor.pt</code>. Inference outputs are saved under <code>runs/cancer_detection*</code>.</li>
+          </ol>
+
+          <h5>Requirements</h5>
+          <pre>Python 3.8+
+ultralytics
+opencv-python
+matplotlib</pre>
+        </div>
+
+        <!-- Gallery / Visualizations -->
+    </div>
+      <div class="col-lg-4">
+          <h5>Visuals</h5>
+          <div class="gallery row g-2">
+            <div class="col-12"><a href="assets\img\project\labels.jpg" target="_blank"><img src="assets\img\project\labels.jpg" alt="Sample inference"></a></div>
+            <div class="col-12"><a href="assets\img\project\GlioblastomaBranScans-700x467.jpg" target="_blank"><img src="assets\img\project\GlioblastomaBranScans-700x467.jpg" alt="Sample scan"></a></div>
+            <div class="col-12"><a href="assets\img\project\results.png" target="_blank"><img src="assets\img\project\results.png" alt="Training screenshot"></a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links and downloads -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <h3>Repository & Downloads</h3>
+          <p>
+            Full source & notebook: <a href="https://github.com/Jaikishan1228/Brain-Tumor-Detection" target="_blank" rel="noopener">github.com/Jaikishan1228/Brain-Tumor-Detection</a>.
+          </p>
+          <p class="small text-muted">Model checkpoint and large artifacts are in the repo under <code>models/</code> and <code>yolov9_brain_tumor/exp1/weights/</code>. If you'd like a direct download button on this page for the weights, I can add one (or host the weights separately).</p>
+        </div>
+      </div>
+
+      <!-- Contact / author -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <h5>Contact</h5>
+          <p>Author: <strong>Jaikishan Nishad</strong> — <a href="mailto:jaikishannishad33@gmail.com">jaikishannishad33@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files (same as site) -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

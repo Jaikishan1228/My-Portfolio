@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Social Media Sentiment Analysis — Project Details</title>
+
+  <!-- Site CSS & Vendor CSS (same as main site) -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="/assets/css/main.css" rel="stylesheet" />
+  <style>
+    .project-hero { margin-top: 20px; }
+    .project-hero img { width:100%; height:auto; border-radius:.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+    .metrics-table td, .metrics-table th { vertical-align: middle; }
+    .gallery img { width:100%; height:auto; display:block; border-radius:.4rem; }
+    .btn-github { background: #24292f; color: #fff; border: none; }
+    pre.requirements { background:#f8f9fa; padding:10px; border-radius:6px; }
+    @media (max-width:576px){ .project-hero { margin-top:10px } }
+  </style>
+</head>
+<body class="projects-page">
+
+  <!-- Header (keeps same look as main site) -->
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="/assets/img/jay.png" alt="" class="img-fluid rounded-circle" />
+    </div>
+    <a href="/index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Jaikishan</h1>
+    </a>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/index.html"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="/projects.html" class="active"><i class="bi bi-images navicon"></i> Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section light-background container" data-aos="fade-up">
+      <div class="row project-hero">
+        <div class="col-lg-7">
+          <!-- Primary image: best available from repo (Plot-1 used as hero) -->
+          <img src="assets\img\portfolio\sentiment.jpg" alt="Sentiment Analysis - overview" class="img-fluid" />
+        </div>
+
+        <div class="col-lg-5">
+          <h2>Social Media Sentiment Analysis</h2>
+          <p class="lead">Pipeline for scraping, cleaning and classifying social media posts into Positive / Negative / Neutral. Includes preprocessing, feature engineering, classic ML models and visualization of sentiment trends.</p>
+
+          <div class="mt-4">
+            <a class="btn btn-github mb-2" href="https://github.com/Jaikishan1228/Social_media_sentiment_analysis_SI_03" target="_blank" rel="noopener">
+              <i class="bi bi-github"></i> View on GitHub
+            </a>
+            <a class="btn btn-outline-primary mb-2" href="../projects.html" style="margin-left:8px;">
+              <i class="bi bi-arrow-left"></i> Back to Projects
+            </a>
+          </div>
+
+          <hr/>
+
+          <h5>Quick Facts</h5>
+          <ul>
+            <li><strong>Primary language:</strong> Python (Jupyter Notebook)</li>
+            <li><strong>Main file:</strong> <code>Social_Media_Sentiment_Analysis.ipynb</code></li>
+            <li><strong>Visuals:</strong> wordclouds, sentiment distribution and trend plots</li>
+            <li><strong>Date:</strong> (as in repo)</li>
+            <li><strong>Author:</strong> Jaikishan Nishad</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project Overview & Features -->
+      <div class="row mt-5">
+        <div class="col-lg-8">
+          <h3>Project Overview</h3>
+          <p>This project analyzes user sentiment in social media posts to determine whether the opinions expressed are positive, negative, or neutral. It applies NLP preprocessing (tokenization, stopword removal, stemming/lemmatization), classical ML classifiers and visualization to surface trends and frequent terms.</p>
+
+          <h4 class="mt-4">Features</h4>
+          <ul>
+            <li>Text preprocessing pipeline (tokenize, stopword removal, stemming/lemmatization)</li>
+            <li>Feature extraction (TF-IDF / Bag-of-Words)</li>
+            <li>Sentiment classification with machine learning models (scikit-learn)</li>
+            <li>Evaluation (accuracy, precision, recall, F1-score)</li>
+            <li>Visualizations: sentiment distribution, trend plots, word clouds</li>
+          </ul>
+
+          <h4 class="mt-4">How to run (quick)</h4>
+          <ol>
+            <li>Clone the repo: <code>git clone https://github.com/Jaikishan1228/Social_media_sentiment_analysis_SI_03.git</code></li>
+            <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
+            <li>Open the notebook: <code>jupyter notebook Social_Media_Sentiment_Analysis.ipynb</code></li>
+            <li>Run cells for data loading, preprocessing, training and visualization.</li>
+          </ol>
+
+          <h5 class="mt-3">Requirements</h5>
+          <pre class="requirements">Python 3, pandas, numpy, nltk/spacy, scikit-learn, matplotlib, seaborn, jupyter</pre>
+
+          <h4 class="mt-4">Evaluation</h4>
+          <p>The notebook produces model performance outputs (accuracy, precision, recall, F1-score). See the notebook for full evaluation tables and confusion matrices.</p>
+        </div>
+
+      <!-- Future improvements and notes -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <h4>Future Improvements</h4>
+          <ul>
+            <li>Experiment with deep learning models (LSTMs, Transformers)</li>
+            <li>Incorporate multilingual sentiment analysis</li>
+            <li>Deploy as a web application / interactive dashboard</li>
+            <li>Improve scraping pipeline and add streaming ingestion</li>
+          </ul>
+
+          <h5 class="mt-3">Notes</h5>
+          <p class="small text-muted">Full notebook, dataset notes and code are in the repository. If you want a live demo (Flask/Streamlit) or an embedded interactive dashboard, I can build that and embed it here.</p>
+        </div>
+      </div>
+
+              <!-- Visual gallery -->
+        <div class="col-lg-4">
+          <h5>Plots & Visuals</h5>
+          <div class="gallery row g-2">
+            <div class="col-12"><a href="assets\img\project\sentiment\output.png" target="_blank"><img src="assets\img\project\sentiment\output.png" alt="Plot 1"></a></div>
+            <div class="col-12"><a href="assets\img\project\sentiment\output1.png" target="_blank"><img src="assets\img\project\sentiment\output1.png" alt="Plot 1"></a></div>
+            <div class="col-12"><a href="assets\img\project\sentiment\output2.png" target="_blank"><img src="assets\img\project\sentiment\output2.png" alt="Plot 1"></a></div>
+            <div class="col-12"><a href="assets\img\project\sentiment\output3.png" target="_blank"><img src="assets\img\project\sentiment\output3.png" alt="Plot 1"></a></div>
+            <div class="col-12"><a href="assets\img\project\sentiment\output4.png" target="_blank"><img src="assets\img\project\sentiment\output4.png" alt="Plot 1"></a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact / author -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <h5>Contact</h5>
+          <p>Author: <strong>Jaikishan Nishad</strong> — <a href="mailto:jaikishannishad33@gmail.com">jaikishannishad33@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RC Plane Flight Controller — Project Details</title>
+
+  <!-- Site CSS & Vendor CSS (same as main site) -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="/assets/css/main.css" rel="stylesheet" />
+  <style>
+    .project-hero { margin-top: 20px; }
+    .project-hero img { width:100%; height:auto; border-radius:.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+    .specs-table th, .specs-table td { vertical-align: middle; }
+    .gallery img { width:100%; height:auto; display:block; border-radius:.4rem; }
+    .btn-github { background: #24292f; color: #fff; border: none; }
+    pre.requirements { background:#f8f9fa; padding:10px; border-radius:6px; white-space:pre-wrap; }
+    .warning { color:#b52; font-weight:600; }
+    @media (max-width:576px){ .project-hero { margin-top:10px } }
+  </style>
+</head>
+<body class="projects-page">
+
+  <!-- Header -->
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="/assets/img/jay.png" alt="" class="img-fluid rounded-circle" />
+    </div>
+    <a href="/index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Jaikishan</h1>
+    </a>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/index.html"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="/projects.html" class="active"><i class="bi bi-images navicon"></i> Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section light-background container" data-aos="fade-up">
+      <div class="row project-hero">
+        <div class="col-lg-7">
+          <!-- Hero image: replace with your best build photo -->
+          <img src="/assets/img/portfolio/plane.jpg" alt="RC Plane Flight Controller" class="img-fluid" />
+        </div>
+
+        <div class="col-lg-5">
+          <h2>RC Plane Flight Controller (Arduino Nano + ADXL345)</h2>
+          <p class="lead">Custom Arduino-based flight controller with accelerometer-based stabilization and servo control for ailerons & elevator. Designed for lightweight RC trainer / experimental airframe control and tuning.</p>
+
+          <div class="mt-4">
+            <!-- Optional: add repo link if you host code -->
+            <a class="btn btn-outline-primary mb-2" href="/projects.html" style="margin-right:8px;">
+              <i class="bi bi-arrow-left"></i> Back to Projects
+            </a>
+          </div>
+
+          <hr/>
+
+          <h5>Quick Specs</h5>
+          <table class="table table-sm table-bordered specs-table">
+            <tbody>
+              <tr><th style="width:40%;">Radio</th><td>RadioLink T8FB (8-ch) transmitter + receiver</td></tr>
+              <tr><th>Motor</th><td>2200 kV brushless outrunner</td></tr>
+              <tr><th>ESC</th><td>40 A ESC (BLHeli / generic)</td></tr>
+              <tr><th>Battery</th><td>1800 mAh LiPo 40C (3S / 4S — confirm your pack voltage before wiring)</td></tr>
+              <tr><th>Flight controller</th><td>Arduino Nano + ADXL345 accelerometer (IMU)</td></tr>
+              <tr><th>Servos</th><td>Standard 9g / 11g servos for aileron & elevator (and throttle passthrough)</td></tr>
+              <tr><th>Propeller</th><td>Suitable for 2200 kV motor and chosen voltage (e.g., 6x4–7x4)</td></tr>
+            </tbody>
+          </table>
+
+          <p class="small text-muted">If any spec above is different (cell count, servo type, or ESC protocol), update the table accordingly.</p>
+        </div>
+      </div>
+
+      <!-- Build summary & wiring -->
+      <div class="row mt-4">
+        <div class="col-lg-8">
+          <h3>Build Summary & Wiring</h3>
+          <p>Overview of wiring and key connections used in this build. This is a compact flight controller based on an Arduino Nano reading ADXL345 accelerometer data, using PID stabilization to drive aileron/elevator servos. The receiver channels map controls and safety failsafe features are implemented in firmware.</p>
+
+          <h5>Wiring (high level)</h5>
+          <ul>
+            <li><strong>Battery → ESC → Motor:</strong> Connect LiPo to ESC battery leads; motor 3-phase wires to ESC output.</li>
+            <li><strong>ESC signal:</strong> ESC servo signal wire → throttle channel on receiver (or to Arduino PWM output if passing throttle through microcontroller).</li>
+            <li><strong>Receiver → Arduino:</strong> Map receiver PWM (or SBUS) channels to Arduino inputs. Typical mapping: throttle, aileron, elevator, rudder (if used), flight mode.</li>
+            <li><strong>Arduino ↔ ADXL345:</strong> Connect ADXL345 to Arduino via I2C (SDA, SCL), 3.3V (or 5V depending on module), GND. Use I2C addresses and wiring per module docs.</li>
+            <li><strong>Arduino → Servos:</strong> Arduino PWM outputs to aileron & elevator servos (ensure common ground with receiver and battery). Use a separate BEC or ESC-provided 5V regulator for servo power if needed.</li>
+          </ul>
+
+          <h5>Suggested pin mapping (example)</h5>
+          <pre class="requirements">
+Arduino Nano (ATmega328P)
+  A4 (SDA)  → ADXL345 SDA
+  A5 (SCL)  → ADXL345 SCL
+  D3        → Aileron servo PWM
+  D5        → Elevator servo PWM
+  D6        → (Optional) LED / status
+  GND       → Common ground (battery negative, ESC BEC, receiver)
+  5V / 3.3V → Power to ADXL345 (match module voltage)
+          </pre>
+
+          <h5>Notes</h5>
+          <ul>
+            <li>Use a common ground between the Arduino, receiver, ESC (BEC) and servos.</li>
+            <li>If your ESC does not provide BEC / 5V for servos, use a separate 5V regulator / BEC rated for servo current.</li>
+            <li>Check receiver protocol — if using SBUS/iBUS, you may need a UART serial parser or use a flight receiver with PWM outputs.</li>
+          </ul>
+        </div>
+
+        <!-- Gallery / Photos -->
+        <div class="col-lg-4">
+          <h5>Photos</h5>
+          <div class="gallery row g-2">
+            <!-- Replace filenames below with your actual uploads -->
+            <div class="col-12"><a href="assets\img\project\Plane_making_Photo\WhatsApp Image 2025-02-14 at 22.09.33_9adab44e.jpg" target="_blank"><img src="assets\img\project\Plane_making_Photo\WhatsApp Image 2025-02-14 at 22.09.33_9adab44e.jpg" alt="Build photo 1"></a></div>
+            <div class="col-12"><a href="assets\img\project\Plane_making_Photo\IMG_20231024_120908.jpg" target="_blank"><img src="assets\img\project\Plane_making_Photo\IMG_20231024_120908.jpg" alt="Build photo 2"></a></div>
+            <div class="col-12"><a href="assets\img\project\Plane_making_Photo\IMG_20231021_144534.jpg" target="_blank"><img src="assets\img\project\Plane_making_Photo\IMG_20231021_144534.jpg" alt="Build photo 3"></a></div>
+            <!-- <div class="col-12"><a href="../assets/img/portfolio/rc_wiring_diagram.png" target="_blank"><img src="../assets/img/portfolio/rc_wiring_diagram.png" alt="Wiring diagram"></a></div> -->
+          </div>
+          <p class="small text-muted mt-2">You said you'd share photos — replace the placeholder images above with your actual photos in <code>assets/img/portfolio/</code>. I can update the page to include captions if you send the images.</p>
+        </div>
+      </div>
+
+      <!-- Firmware & tuning -->
+      <div class="row mt-4">
+        <div class="col-lg-8">
+          <h3>Firmware, Control & Tuning</h3>
+          <p>Firmware runs on the Arduino Nano and implements a basic attitude-stabilization loop:</p>
+          <ol>
+            <li>Read accelerometer (ADXL345) and receiver inputs (PWM or serial).</li>
+            <li>Estimate roll/pitch from accelerometer; optionally add complementary filter if using gyro later.</li>
+            <li>Compute PID control for aileron/elevator based on desired stick inputs vs measured attitude.</li>
+            <li>Output PWM to servos for control surfaces. Throttle usually passed through to ESC (unless motor speed is controlled directly).</li>
+          </ol>
+
+          <h5>Calibration & Tuning</h5>
+          <ul>
+            <li>Place plane on level surface and record raw ADXL345 readings to set offsets (zero-g calibration).</li>
+            <li>Tune PID gains on the ground with props removed (very small gains to verify direction of control).</li>
+            <li>Do low-altitude test flights in manual mode; gradually increase stabilization gains until stable response is achieved.</li>
+            <li>Record flight logs (serial prints) for later analysis and iterative tuning.</li>
+          </ul>
+
+          <h5>Suggested filenames / repo layout</h5>
+          <pre class="requirements">
+/rc-plane-project/
+  firmware/
+    flight_controller.ino         # Arduino sketch
+  diagrams/
+    rc_wiring_diagram.png
+  photos/
+    rc_build_1.jpg
+    rc_build_2.jpg
+  README.md
+          </pre>
+
+          <p class="warning">Safety note:</p>
+          <p class="small">Always remove propellers when testing or tuning on bench. Use an appropriate LiPo charger and follow LiPo safety guidelines. Keep a fire extinguisher nearby when charging or testing batteries.</p>
+        </div>
+
+        <div class="col-lg-4">
+          <h5>Useful links & resources</h5>
+          <ul>
+            <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub (host firmware)</a></li>
+            <li><a href="https://learn.adafruit.com/adxl345" target="_blank" rel="noopener">ADXL345 datasheet / tutorial</a></li>
+            <li><a href="https://www.arduino.cc/en/Reference/Wire" target="_blank" rel="noopener">Arduino Wire (I2C) reference</a></li>
+            <li><a href="https://www.rcgroups.com/" target="_blank" rel="noopener">RC Groups — community for tips & flight testing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact / author -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <h5>Contact</h5>
+          <p>Author: <strong>Jaikishan Nishad</strong> — <a href="mailto:jaikishannishad33@gmail.com">jaikishannishad33@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

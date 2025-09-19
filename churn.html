@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Churn Prediction — Project Details</title>
+
+  <!-- Site CSS & Vendor CSS (same as main site) -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="/assets/css/main.css" rel="stylesheet" />
+  <style>
+    /* Page tweaks */
+    .project-hero { margin-top: 20px; }
+    .project-hero img { width:100%; height:auto; border-radius:.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+    .metrics-table td, .metrics-table th { vertical-align: middle; }
+    .gallery img { width:100%; height:auto; display:block; border-radius:.4rem; }
+    .btn-github { background: #24292f; color: #fff; border: none; }
+    pre.requirements { background:#f8f9fa; padding:10px; border-radius:6px; }
+    @media (max-width:576px){ .project-hero { margin-top:10px } }
+  </style>
+</head>
+<body class="projects-page">
+
+  <!-- Header (consistent with main site) -->
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="/assets/img/jay.png" alt="" class="img-fluid rounded-circle" />
+    </div>
+    <a href="/index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Jaikishan</h1>
+    </a>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/index.html"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="/projects.html" class="active"><i class="bi bi-images navicon"></i> Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section light-background container" data-aos="fade-up">
+      <div class="row project-hero">
+        <div class="col-lg-7">
+          <!-- Hero image: replace with your project's main image -->
+          <img src="assets\img\portfolio\churn.png" alt="Customer Churn Prediction" class="img-fluid" />
+        </div>
+
+        <div class="col-lg-5">
+          <h2>Customer Churn Prediction</h2>
+          <p class="lead">Predicting which customers are likely to churn using feature engineering and ensemble machine learning techniques. The project aims to help businesses identify at-risk users and suggest targeted retention actions.</p>
+
+          <div class="mt-4">
+            <a class="btn btn-github mb-2" href="https://github.com/Jaikishan1228/Customer_churn_prediction_SI_04" target="_blank" rel="noopener">
+              <i class="bi bi-github"></i> View on GitHub
+            </a>
+            <a class="btn btn-outline-primary mb-2" href="../projects.html" style="margin-left:8px;">
+              <i class="bi bi-arrow-left"></i> Back to Projects
+            </a>
+          </div>
+
+          <hr/>
+
+          <h5>Quick Facts</h5>
+          <ul>
+            <li><strong>Primary language:</strong> Python (Jupyter Notebook / .py scripts)</li>
+            <li><strong>Main file(s):</strong> <code>Customer_Churn_Prediction.ipynb</code> (or similar notebook in repo)</li>
+            <li><strong>Models:</strong> Logistic Regression, Random Forest, XGBoost / ensemble</li>
+            <li><strong>Key techniques:</strong> feature engineering, SMOTE / resampling (if used), cross-validation</li>
+            <li><strong>Author:</strong> Jaikishan Nishad</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project Overview & Approach -->
+      <div class="row mt-5">
+        <div class="col-lg-8">
+          <h3>Project Overview</h3>
+          <p>This project builds a churn prediction pipeline that ingests historical customer data (usage patterns, transactions, demographics), engineers predictive features, and trains supervised models to estimate churn probability. Outputs include model evaluation metrics, a list of top predictors, and suggested retention actions for high-risk segments.</p>
+
+          <h4 class="mt-4">Typical Pipeline</h4>
+          <ol>
+            <li>Data loading & exploratory data analysis (EDA)</li>
+            <li>Data cleaning and missing value handling</li>
+            <li>Feature engineering (aggregations, behavioral features, categorical encoding)</li>
+            <li>Train/test split, cross-validation and class balancing (SMOTE or weighting)</li>
+            <li>Model training (Logistic Regression, Random Forest, XGBoost), hyperparameter tuning</li>
+            <li>Evaluation (accuracy, precision, recall, F1-score, ROC-AUC) and feature importance</li>
+          </ol>
+
+          <h4 class="mt-4">How to run (quick)</h4>
+          <ol>
+            <li>Clone the repo:
+              <pre><code>git clone https://github.com/Jaikishan1228/Customer_churn_prediction_SI_04.git</code></pre>
+            </li>
+            <li>Install dependencies:
+              <pre class="requirements"><code>pip install -r requirements.txt</code></pre>
+            </li>
+            <li>Open the notebook:
+              <pre><code>jupyter notebook Customer_Churn_Prediction.ipynb</code></pre>
+            </li>
+            <li>Run the cells for data preparation, modeling and evaluation. Check the `models/` and `outputs/` folders for trained models and result artifacts.</li>
+          </ol>
+
+          <h5 class="mt-3">Requirements</h5>
+          <pre class="requirements">Python 3.8+
+pandas, numpy, scikit-learn, xgboost, imbalanced-learn, matplotlib, seaborn, jupyter</pre>
+
+          <h4 class="mt-4">Evaluation & Results</h4>
+          <p class="mb-1">Evaluation metrics and model comparisons are available in the notebook. Typical results include confusion matrices, ROC curves and a feature-importance ranking. See the repository for exact values and experiment logs.</p>
+          <p class="small text-muted">If you'd like, I can extract the best model's numeric metrics and show them here (precision/recall/F1/ROC-AUC) — or add downloadable CSVs of predictions.</p>
+        </div>
+
+        <!-- Visual gallery -->
+        <div class="col-lg-4">
+          <h5>Plots & Visuals</h5>
+          <div class="gallery row g-2">
+            <!-- Update these images to match the files in your repo -->
+            <div class="col-12"><a href="assets\img\project\churn\image.png" target="_blank"><img src="assets\img\project\churn\image.png" alt="Confusion Matrix"></a></div>
+            <div class="col-12"><a href="assets\img\project\churn\roc.png" target="_blank"><img src="assets\img\project\churn\roc.png" alt="ROC Curve"></a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommendations & Next Steps -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <h4>Recommendations & Next Steps</h4>
+          <ul>
+            <li>Deploy the best model as a REST API (Flask/FastAPI) for real-time scoring.</li>
+            <li>Create a dashboard (Streamlit / Dash) for business users to view churn risk segments and export lists.</li>
+            <li>Integrate model predictions into CRM for targeted retention campaigns (email/SMS).</li>
+            <li>Monitor model drift and set up periodic retraining pipelines.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Links and repo -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <h3>Repository & Downloads</h3>
+          <p>Full source & notebook: <a href="https://github.com/Jaikishan1228/Customer_churn_prediction_SI_04" target="_blank" rel="noopener">github.com/Jaikishan1228/Customer_churn_prediction_SI_04</a>.</p>
+          <p class="small text-muted">Trained models, experiment logs and result CSVs (if present) are located in the repository. Want a direct download button for the final model or a link to a demo? I can add that.</p>
+        </div>
+      </div>
+
+      <!-- Contact / author -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <h5>Contact</h5>
+          <p>Author: <strong>Jaikishan Nishad</strong> — <a href="mailto:jaikishannishad33@gmail.com">jaikishannishad33@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Jay</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

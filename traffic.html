@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Traffic Forecasting — Project Details</title>
+
+  <!-- Site CSS & Vendor CSS (same as main site) -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="/assets/css/main.css" rel="stylesheet" />
+  <style>
+    /* Page tweaks */
+    .project-hero { margin-top: 20px; }
+    .project-hero img { width:100%; height:auto; border-radius:.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+    .metrics-table td, .metrics-table th { vertical-align: middle; }
+    .gallery img { width:100%; height:auto; display:block; border-radius:.4rem; }
+    .btn-github { background: #24292f; color: #fff; border: none; }
+    pre.requirements { background:#f8f9fa; padding:10px; border-radius:6px; white-space:pre-wrap; }
+    @media (max-width:576px){ .project-hero { margin-top:10px } }
+  </style>
+</head>
+<body class="projects-page">
+
+  <!-- Header (consistent with main site) -->
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="/assets/img/jay.png" alt="" class="img-fluid rounded-circle" />
+    </div>
+    <a href="/index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Jaikishan</h1>
+    </a>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/index.html"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="/projects.html" class="active"><i class="bi bi-images navicon"></i> Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section light-background container" data-aos="fade-up">
+      <div class="row project-hero">
+        <div class="col-lg-7">
+          <!-- Hero image: update to your preferred visual -->
+          <img src="/assets/img/portfolio/traffic.jpg" alt="Website Traffic Forecasting" class="img-fluid" />
+        </div>
+
+        <div class="col-lg-5">
+          <h2>Website Traffic Forecasting</h2>
+          <p class="lead">Forecast website visitors, pageviews or sessions using time series analysis and machine learning models. The notebook demonstrates data preprocessing, EDA, model fitting and comparison so you can predict future traffic trends.</p>
+
+          <div class="mt-4">
+            <a class="btn btn-github mb-2" href="https://github.com/Jaikishan1228/Forecasting_website_traffic_SI_05" target="_blank" rel="noopener">
+              <i class="bi bi-github"></i> View on GitHub
+            </a>
+            <a class="btn btn-outline-primary mb-2" href="../projects.html" style="margin-left:8px;">
+              <i class="bi bi-arrow-left"></i> Back to Projects
+            </a>
+          </div>
+
+          <hr/>
+
+          <h5>Quick Facts</h5>
+          <ul>
+            <li><strong>Main notebook:</strong> <code>Forecasting_website_traffic.ipynb</code></li>
+            <li><strong>Primary focus:</strong> EDA, trend & seasonality analysis, forecasting</li>
+            <li><strong>Models covered:</strong> ARIMA / SARIMA, Prophet, and ML regression models</li>
+            <li><strong>Evaluation metrics:</strong> RMSE, MAPE, MAE</li>
+            <li><strong>Author:</strong> Jaikishan Nishad</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project Overview & Features -->
+      <div class="row mt-5">
+        <div class="col-lg-8">
+          <h3>Project Overview</h3>
+          <p>This project demonstrates forecasting website traffic (daily visitors, pageviews, sessions) by analyzing historical traffic logs, identifying trends and seasonality, and comparing classical time-series and machine-learning approaches. It aims to produce reliable short-to-medium term forecasts useful for planning marketing campaigns, capacity planning, and business insights.</p>
+
+          <h4 class="mt-4">Features</h4>
+          <ul>
+            <li>Data preprocessing and cleaning of website traffic logs</li>
+            <li>Exploratory Data Analysis (trend, seasonality, decomposition)</li>
+            <li>Time-series forecasting using ARIMA / SARIMA and Prophet</li>
+            <li>Machine learning regression model baselines</li>
+            <li>Model evaluation with RMSE, MAPE and MAE; comparison plots of predicted vs. actual</li>
+          </ul>
+
+          <h4 class="mt-4">How to run (quick)</h4>
+          <ol>
+            <li>Clone the repository:
+              <pre><code>git clone https://github.com/Jaikishan1228/Forecasting_website_traffic_SI_05.git</code></pre>
+            </li>
+            <li>Install dependencies:
+              <pre class="requirements"><code>pip install -r requirements.txt</code></pre>
+            </li>
+            <li>Open the notebook:
+              <pre><code>jupyter notebook Forecasting_website_traffic.ipynb</code></pre>
+            </li>
+            <li>Run the notebook cells to preprocess data, fit models, and generate forecast plots.</li>
+          </ol>
+
+          <h5 class="mt-3">Requirements</h5>
+          <pre class="requirements">Python 3
+pandas & numpy
+matplotlib & seaborn
+scikit-learn
+statsmodels / prophet
+jupyter</pre>
+
+          <h4 class="mt-4">Evaluation & Results</h4>
+          <p>Notebook includes trend/seasonality visualizations, forecast plots for upcoming days/weeks/months, and a comparison of models using RMSE/MAPE/MAE. See the repository for the exact experiment outputs and plots.</p>
+        </div>
+
+        <!-- Visual gallery -->
+        <div class="col-lg-4">
+          <h5>Plots & Visuals</h5>
+          <div class="gallery row g-2">
+            <!-- Replace or add images from the repo to this folder -->
+            <div class="col-12"><a href="assets\img\project\traffic\overveiw.png" target="_blank"><img src="assets\img\project\traffic\overveiw.png" alt="Traffic overview"></a></div>
+            <div class="col-12"><a href="assets\img\project\traffic\image.png" target="_blank"><img src="assets\img\project\traffic\image.png" alt="Trend & Seasonality"></a></div>
+            <div class="col-12"><a href="assets\img\project\traffic\forcast.png" target="_blank"><img src="assets\img\project\traffic\forcast.png" alt="Forecast plot"></a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Future improvements -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <h4>Future Improvements</h4>
+          <ul>
+            <li>Experiment with deep learning models (LSTM / GRU / Transformers) for better sequence modeling.</li>
+            <li>Include external regressors (holidays, marketing campaigns, ad spend).</li>
+            <li>Deploy as a live dashboard for real-time monitoring and automated retraining.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Repo & contact -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <h3>Repository & Resources</h3>
+          <p>Full notebook and project files: <a href="https://github.com/Jaikishan1228/Forecasting_website_traffic_SI_05" target="_blank" rel="noopener">github.com/Jaikishan1228/Forecasting_website_traffic_SI_05</a>.</p>
+          <p class="small text-muted">Notebook: <code>Forecasting_website_traffic.ipynb</code>. See README in the repo for additional notes, example results and project structure.</p>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <h5>Contact</h5>
+          <p>Author: <strong>Jaikishan Nishad</strong> — <a href="mailto:jaikishannishad33@gmail.com">jaikishannishad33@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
